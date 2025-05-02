@@ -54,10 +54,10 @@ sequenceDiagram
   - Orange/Yellow wire: GPIO signal pin (e.g., GPIO18)
   - Receives control signals from the Pi to dispense a fortune cookie.
 
-- **Bluetooth Thermal Printer:**
-  - Paired with the Pi via Bluetooth (no GPIO wiring required).
+- **USB Thermal Printer:**
+  - Connected to the Pi via USB cable (no GPIO or Bluetooth wiring required).
   - Receives print commands for customized messages and tips.
-  - Powered by USB or battery.
+  - Powered by USB.
 
 - **Power Supply:**
   - Raspberry Pi is powered by a dedicated USB adapter (5V, 2.5A or higher recommended).
@@ -100,7 +100,7 @@ Fortune Flow is an innovative customer feedback system that combines sentiment a
 | Item                              | Purpose                                                        | Vendor     | Price (USD) |
 |-----------------------------------|----------------------------------------------------------------|------------|-------------|
 | Raspberry Pi 4 (2GB or 4GB)       | Main processing unit for running the server & interfacing with sensors | Adafruit   | $45.00      |
-| Bluetooth Thermal Printer         | Print out customized messages and suggested tip amount for customers | Amazon     | $25.00      |
+| USB Thermal Printer               | Print out customized messages and suggested tip amount for customers | Amazon     | $25.00      |
 | SG90 Servo Motor                  | To dispense a fortune cookie based on sentiment                | SparkFun   | $3.95       |
 | USB Power Supply for Pi           | To power Raspberry Pi securely                                 | Adafruit   | $7.50       |
 | Fortune Cookies (bulk pack)       | Actual cookies for dispensing (colored or customized)          | Amazon     | $16.99      |
