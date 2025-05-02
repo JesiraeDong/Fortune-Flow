@@ -211,7 +211,6 @@ python servo_controller.py
 ```bash
 python printer_controller.py
 ```
-```
 
 ## Usage
 
@@ -240,3 +239,26 @@ python publisher.py
 ## License
 
 MIT License 
+
+## Demonstration Note
+
+**Note:**
+A video demonstration of the USB thermal printer is not included in this submission because the printing paper ran out during testing, and new rolls have not yet been purchased. All printer-related code and setup instructions are provided, and the system has been tested up to the point of paper exhaustion. 
+
+## Prototyping Photos & Video
+
+Below are real photos and a video from the prototyping and testing process:
+
+### Photos
+
+- ![Prototype Photo 1](docs/IMG_8914.JPG)
+  *Figure: Fortune Flow prototype hardware setup.*
+- ![Prototype Photo 2](docs/IMG_8918.HEIC)
+  *Figure: Close-up of the hardware during assembly.*
+- ![Prototype Photo 3](docs/IMG_8912.HEIC)
+  *Figure: Additional view of the prototype components.*
+
+### Video
+
+- [Prototyping Video (MP4)](docs/sd1746209185_2.MP4)
+  *Video: Testing the prototype hardware in action.* 
