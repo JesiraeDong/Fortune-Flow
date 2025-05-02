@@ -42,20 +42,32 @@ sequenceDiagram
 
 ## Circuit Diagram
 
-![Circuit Diagram](docs/circuit-diagram.png)
-*Figure: Circuit diagram showing the connections between Raspberry Pi, servo motor, and thermal printer. See fallback diagram below if image does not display.*
+**Hardware Connections Overview:**
 
-<details>
-<summary>Fallback: Text-based Circuit Diagram (Mermaid)</summary>
+- **Raspberry Pi (Main Controller):**
+  - Runs `servo_controller.py` and `printer_controller.py` to control hardware.
+  - Connects to the server via WiFi or Ethernet.
 
-```mermaid
-graph LR
-    A[Raspberry Pi] --> B[GPIO Pins]
-    B --> C[Servo Motor]
-    C --> D[Fortune Cookie Dispenser]
-    E[Power Supply] --> C
-```
-</details>
+- **Servo Motor (SG90):**
+  - Red wire: 5V (from Pi)
+  - Brown/Black wire: GND (from Pi)
+  - Orange/Yellow wire: GPIO signal pin (e.g., GPIO18)
+  - Receives control signals from the Pi to dispense a fortune cookie.
+
+- **Bluetooth Thermal Printer:**
+  - Paired with the Pi via Bluetooth (no GPIO wiring required).
+  - Receives print commands for customized messages and tips.
+  - Powered by USB or battery.
+
+- **Power Supply:**
+  - Raspberry Pi is powered by a dedicated USB adapter (5V, 2.5A or higher recommended).
+  - Servo motor is powered by the Pi, but for multiple servos or higher loads, use an external 5V supply (with a common ground).
+
+> **Note:**
+> Each time you open a new terminal session, remember to activate your virtual environment before running any Python scripts:
+> ```bash
+> source venv/bin/activate
+> ```
 
 ## Product Description
 
