@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Dragon Restaurant - Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Golden Dragon Restaurant</h1>
+        <h2>We Value Your Feedback!</h2>
+        
+        <div class="nav-links">
+            <a href="{{ url_for('dashboard') }}" class="dashboard-link">View Dashboard</a>
+        </div>
+
+        <form method="POST" action="/">
+            <div class="form-group">
+                <label for="feedback">Please share your dining experience:</label>
+                <textarea 
+                    id="feedback" 
+                    name="feedback" 
+                    rows="5" 
+                    required 
+                    placeholder="Tell us about your experience today..."></textarea>
+            </div>
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html> 

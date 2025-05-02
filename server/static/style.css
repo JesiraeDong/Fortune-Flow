@@ -1,0 +1,346 @@
+/* Chinese Restaurant Theme Colors */
+:root {
+    --primary-red: #AD0A08;
+    --secondary-red: #D11315;
+    --gold: #F9AF27;
+    --light-gold: #F6E061;
+    --teal: #2B7F89;
+    --dark-teal: #165365;
+    --text-dark: #333333;
+    --text-light: #FFFFFF;
+    --background-light: #F5F5F5;
+}
+
+body {
+    font-family: 'Noto Sans', 'Microsoft YaHei', sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, var(--primary-red), var(--secondary-red));
+    color: var(--text-light);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Connection Status */
+#connectionStatus {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#connectionStatus.connected {
+    background-color: var(--teal);
+    color: var(--text-light);
+}
+
+#connectionStatus.disconnected {
+    background-color: var(--secondary-red);
+    color: var(--text-light);
+}
+
+#connectionStatus.error {
+    background-color: var(--primary-red);
+    color: var(--text-light);
+}
+
+/* Chart Container */
+.chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.chart-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Feedback Table */
+.feedback-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-table th {
+    background: var(--teal);
+    color: var(--text-light);
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+}
+
+.feedback-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.feedback-table tr:last-child td {
+    border-bottom: none;
+}
+
+.feedback-table tr:hover {
+    background-color: rgba(249, 175, 39, 0.1);
+}
+
+/* Sentiment Colors */
+.sentiment-positive {
+    color: var(--teal);
+    font-weight: 600;
+}
+
+.sentiment-neutral {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.sentiment-negative {
+    color: var(--secondary-red);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .chart-container {
+        padding: 1rem;
+    }
+
+    .feedback-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}
+
+.loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--light-gold);
+    border-top-color: var(--primary-red);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Chart Title Styling */
+.chart-title {
+    color: var(--dark-teal);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.chart-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Card Styling */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Stats Display */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stat-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin: 0.5rem 0;
+}
+
+.stat-label {
+    color: var(--text-dark);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.nav-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1890ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #096dd9;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    background-color: #52c41a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #389e0d;
+}
+
+/* Animation for new feedback */
+@keyframes highlightNew {
+    from {
+        background-color: #f6ffed;
+        transform: translateX(-10px);
+    }
+    to {
+        background-color: transparent;
+        transform: translateX(0);
+    }
+}
+
+.new-feedback {
+    animation: highlightNew 1s ease-out;
+}
+
+/* Make charts responsive */
+.chart > div {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .charts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    button {
+        width: 100%;
+    }
+} 
